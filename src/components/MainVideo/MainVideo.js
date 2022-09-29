@@ -1,10 +1,10 @@
 import "./MainVideo.scss";
 
-const MainVideo = ({video}) => {
+const MainVideo = (props) => {
 
     return (
       <div className="mainVideo">
-        <img src={video.image} className="mainVideo__vid"></img>
+        <img src={props.video.image} alt={props.video.title} video className="mainVideo__vid"></img>
       </div>
     );
 }

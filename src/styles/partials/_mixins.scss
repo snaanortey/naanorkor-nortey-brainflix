@@ -1,0 +1,40 @@
+@use "./variables";
+
+// Button for mobile
+@mixin button-mobile {
+    border-radius: 10px;
+    height: 8rem;
+    
+}
+
+// Fonts for mobile
+
+@mixin page-header-mobile{
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+    font-weight: 700;
+}
+
+@mixin section-header-mobile {
+    font-size: 1.2rem;
+    line-height: 2rem;
+    font-weight: 700;
+}
+
+@mixin sub-section-header-mobile {
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+    font-weight: 700;
+}
+
+@mixin body-mobile {
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+    font-weight: 400;
+}
+
+@mixin labels-button-mobile {
+    font-size: 3rem;
+    line-height: 3.8rem;
+    font-weight: 700;
+}

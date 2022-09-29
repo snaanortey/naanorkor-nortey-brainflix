@@ -1,12 +1,12 @@
 import CommentItem from "../CommentItem/CommentItem";
 import CommentForm from "../CommentForm/CommentForm";
 
-const CommentBox = ({comments}) => {
+const CommentBox = (props) => {
   return (
     <div className="commentBox">
-      <p className="comments-number">{comments.length} Comments</p>
+      <p className="comments-number">{props.comments.length} Comments</p>
       <CommentForm />
-      {comments.map((comment) => (
+      {props.comments.map((comment) => (
         <CommentItem key={comment.id} comment={comment} />
       ))}
     </div>

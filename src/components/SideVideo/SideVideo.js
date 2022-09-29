@@ -1,14 +1,17 @@
 import "./SideVideo.scss"
 
-const SideVideo = ({user}) => {
+const SideVideo = (props) => {
  return(
-    <div className="sideVideo">
+    <div onClick={()=> {
+        props.sideVideoClickHandler(props.sideVideo.id)
+    }}
+    className="sideVideo">
         <div className="sideVideo__image-div"> 
-        <img src={user.image} alt="" className="sideVideo__image" />
+        <img src={props.sideVideo.image} alt={props.channel} video className="sideVideo__image" />
         </div>
         <div className="sideVideo__content">
-            <h2 className="sideVideo__title">{user.title}</h2>
-            <p className="sideVideo__channel">{user.channel}</p>
+            <h2 className="sideVideo__title">{props.sideVideo.title}</h2>
+            <p className="sideVideo__channel">{props.sideVideo.channel}</p>
         </div>
     </div>
  )

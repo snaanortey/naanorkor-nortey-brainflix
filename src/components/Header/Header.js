@@ -14,11 +14,6 @@ const Header = () => {
           <div className="header__nav">
             <div className="header__navOne">
               <div className="header__nav-search">
-                <img
-                  src={searchLogo}
-                  alt="search logo"
-                  className="header__nav-search-icon"
-                />
                 <input
                   type="search"
                   className="header__nav-search-button"
@@ -31,10 +26,9 @@ const Header = () => {
             </div>
             <div className="header__navTwo">
               <div className="header__uploaddiv">
-                <img src={uploadIcon} alt="" className="header__upload-image" />
                 <button className="header__upload-button">UPLOAD</button>
               </div>
-              <div className="header__imagediv header__imagediv--mobile">
+              <div className="header__imagediv header__imagediv--tablet">
                 <img src={profilePic} alt="profile pic" className="header__image" />
               </div>
             </div>
