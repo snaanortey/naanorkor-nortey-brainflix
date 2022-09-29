@@ -1,6 +1,10 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
 .form {
     &__image {
         width: 25px;
         height: 25px;
     }
 }
+

@@ -6,8 +6,8 @@ const CommentBox = ({comments}) => {
     <div className="commentBox">
       <p className="comments-number">{comments.length} Comments</p>
       <CommentForm />
-      {comments.map((comment, i) => (
-        <CommentItem key={i} comment={comment} />
+      {comments.map((comment) => (
+        <CommentItem key={comment.id} comment={comment} />
       ))}
     </div>
   );

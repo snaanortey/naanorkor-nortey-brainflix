@@ -3,6 +3,8 @@ import likeIcon from "../../assets/Icons/likes.svg";
 import viewIcon from "../../assets/Icons/views.svg";
 
 const DisplayVideoDetails = ({users}) => {
+
+    //let users = currentUser;
     return (
       <div className="videoDetails">
         <h1 className="videoDetails__title">{users.title}</h1>
