@@ -3,13 +3,25 @@
 
 .commentBox {
  padding: 0 2.4rem;
+
+ @include tablet {
+padding: 1rem 3.6rem;
+ } 
 }
 
 .comments-number {
     font-size: 2.4rem;
     line-height: 3.2rem;
     font-weight: 700;
+
+    @include tablet {
+        font-size: 1.6rem;
+    line-height: 2.4rem;
+    font-weight: 800;
+    }
 }
+
+
 
 .form__divider {
     @include divider-lines;

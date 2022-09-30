@@ -2,14 +2,25 @@
 @use "../../styles/partials/variables" as *;
 
 .videoDetails {
-    padding:$mobile-padding;
-    
-   &__title {
-    font-size: 5.6rem;
-    line-height: 6.4rem;
-    font-weight: 700;
-    padding-bottom: 2.4rem;
-   }
+    padding: $mobile-padding;
+
+    @include tablet {
+        padding: $tablet-padding;
+    }
+
+    &__title {
+        font-size: 5.6rem;
+        line-height: 6.4rem;
+        font-weight: 700;
+        padding-bottom: 2.4rem;
+
+        @include tablet {
+            font-size: 3rem;
+            line-height: 3.8rem;
+            font-weight: 800;
+            padding-bottom: 2.4rem;
+        }
+    }
 
     &__subtitles {
         display: flex;
@@ -18,49 +29,104 @@
         align-items: center;
         width: 100%;
         padding: 2.4rem 0;
+
+        @include tablet {
+            align-items: center;
+        }
     }
 
     &__channel {
         font-size: 3rem;
         line-height: 3.8rem;
         font-weight: 600;
+
+        @include tablet {
+            font-size: 1.8rem;
+            line-height: 2.4rem;
+            font-weight: 800;
+            padding-right: 3rem;
+        }
     }
 
-    &__subtitleone, &__subtitletwo {
+    &__subtitleone,
+    &__subtitletwo {
         width: 50%;
+
+        @include tablet {
+            display: flex;
+            flex-direction: row;
+        }
     }
 
-    &__channel, &__date  {
+    &__subtitletwo {
+        width: 35%;
+    }
+
+    &__channel,
+    &__date {
         width: 100%;
-        
+
+        @include tablet {
+            width: fit-content;
+        }
     }
 
-    &__date  {
+    &__date {
         color: silver;
         @include page-header-mobile;
         padding-top: 1.8rem;
+
+        @include tablet {
+            padding: 0;
+            font-size: 1.8rem;
+            line-height: 2.4rem;
+            font-weight: 500;
+        }
     }
 
-    &__likes, &__views {
+    &__likes,
+    &__views {
         display: flex;
         justify-content: center;
         width: 100%;
         color: silver;
         @include page-header-mobile;
+
+        @include tablet {
+            font-size: 1.8rem;
+            line-height: 2.6rem;
+            font-weight: 500;
+            align-items: center;
+            justify-content: flex-end;
+        }
     }
 
     &__likes {
         padding-top: 1.8rem;
+
+        @include tablet {
+            padding: 0;
+        }
     }
 
     &__viewIcon {
         height: 3.5rem;
         padding: 0 2rem;
+
+        @include tablet {
+            height: 1.8rem;
+            padding: 0 1rem;
+        }
     }
 
     &__likeIcon {
         height: 4rem;
         padding-right: 2rem;
+
+        @include tablet {
+            height: 1.8rem;
+            padding: 0 1rem;
+        }
     }
 
     &__divider {
@@ -72,5 +138,10 @@
         line-height: 4rem;
         font-weight: 500;
         padding: 2.4rem 0;
+
+        @include tablet {
+            font-size: 1.6rem;
+    line-height: 2.4rem;
+        }
     }
 }

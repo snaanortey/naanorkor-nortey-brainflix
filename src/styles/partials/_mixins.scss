@@ -2,7 +2,7 @@
 
 // Button for mobile
 @mixin button-mobile {
-    border-radius: 10px;
+    border-radius: 4px;
     height: 8rem;
 }
 
@@ -60,4 +60,19 @@
     font-size: 3rem;
     line-height: 3.8rem;
     font-weight: 700;
+}
+
+
+// Responsive scc breakpoints
+
+@mixin tablet {
+    @media screen and (min-width: $tablet-breakpoint) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: $desktop-breakpoint) {
+        @content;
+    }
 }

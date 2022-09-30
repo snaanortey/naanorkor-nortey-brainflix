@@ -7,16 +7,45 @@
         justify-content: center;
         padding: $mobile-padding;
         flex-direction: column;
+
+        @include tablet {
+            padding: $tablet-padding;
+        }
+
+        @include tablet {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    &__nav {
+        @include tablet {
+            display: flex;
+            flex-direction: row;
+            width: 70%;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
     }
 
     &__logo {
         margin: auto;
         margin-bottom: 2.4rem;
+
+        @include tablet {
+            margin: 0;
+        }
     }
 
     &__logo-image {
         height: 8.5rem;
         width: 25rem;
+
+        @include tablet {
+            height: 3.5rem;
+    width: 12rem;
+        }
     }
 
     &__nav-search-button {
@@ -32,6 +61,12 @@
         background-size: 4rem;
         padding-left: 6rem;
         padding-top: 1rem;
+
+        @include tablet {
+            background-size: 2rem;
+            padding-top: 0;
+            padding-left: 3rem;
+        }
     }
 
     &__nav-search-button:active {
@@ -41,10 +76,20 @@
     &__nav-search-button,
     &__upload-button {
         @include button-mobile;
+
+        @include tablet {
+            height: 5rem;
+            
+        }
     }
 
     &__uploaddiv {
         padding-top: 2.4rem;
+
+        @include tablet {
+            width: 95%;
+            padding: 0;
+        }
     }
 
     &__upload-button {
@@ -61,12 +106,35 @@
         background-position-x: 2rem;
         border: none;
         font-size: 3rem;
-            line-height: 3.2rem;
-            font-weight: 600;
+        line-height: 3.2rem;
+        font-weight: 600;
+
+        @include tablet {
+            font-size: 1.6rem;
+    line-height: 2.4rem;
+            font-weight: 800;
+            background-size: 2.4rem;
+            width: 90%;
+            
+            
+            
+        }
     }
 
-    &__imagediv--tablet {
-        display: none;
+    &__imagediv {
+        &--tablet {
+            display: none;
+
+            @include tablet {
+                display: flex;
+            }
+        }
+
+        &--mobile {
+            @include tablet {
+                display: none;
+            }
+        }
     }
 
     &__navOne {
@@ -76,19 +144,37 @@
         align-items: center;
         width: 100%;
         margin-bottom: 1rem;
+
+        @include tablet {
+            width: 49%;
+        }
+    }
+
+    &__navTwo {
+        @include tablet {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            width: 49%;
+        }
     }
 
     &__nav-search {
         width: 100%;
         ::placeholder {
             color: $light-black-color;
-            font-size: 3rem;
-            line-height: 3.2rem;
+            font-size: 1.6rem;
+            line-height: 2.4rem;
             font-weight: 400;
         }
     }
 
     &__image {
         @include avatar;
+
+        @include tablet {
+            width: 5rem;
+            height: 5rem;
+        }
     }
 }
