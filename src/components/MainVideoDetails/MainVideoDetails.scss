@@ -1,2 +1,76 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
+
+.videoDetails {
+    padding:$mobile-padding;
+    
+   &__title {
+    font-size: 5.6rem;
+    line-height: 6.4rem;
+    font-weight: 700;
+    padding-bottom: 2.4rem;
+   }
+
+    &__subtitles {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 2.4rem 0;
+    }
+
+    &__channel {
+        font-size: 3rem;
+        line-height: 3.8rem;
+        font-weight: 600;
+    }
+
+    &__subtitleone, &__subtitletwo {
+        width: 50%;
+    }
+
+    &__channel, &__date  {
+        width: 100%;
+        
+    }
+
+    &__date  {
+        color: silver;
+        @include page-header-mobile;
+        padding-top: 1.8rem;
+    }
+
+    &__likes, &__views {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        color: silver;
+        @include page-header-mobile;
+    }
+
+    &__likes {
+        padding-top: 1.8rem;
+    }
+
+    &__viewIcon {
+        height: 3.5rem;
+        padding: 0 2rem;
+    }
+
+    &__likeIcon {
+        height: 4rem;
+        padding-right: 2rem;
+    }
+
+    &__divider {
+        @include divider-lines;
+    }
+
+    &__description {
+        font-size: 2.8rem;
+        line-height: 4rem;
+        font-weight: 500;
+        padding: 2.4rem 0;
+    }
+}

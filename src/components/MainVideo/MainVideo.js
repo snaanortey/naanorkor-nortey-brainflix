@@ -1,12 +1,16 @@
 import "./MainVideo.scss";
 
 const MainVideo = (props) => {
-
-    return (
-      <div className="mainVideo">
-        <img src={props.video.image} alt={props.video.title} video className="mainVideo__vid"></img>
-      </div>
-    );
-}
+  return (
+    <div className="mainVideo">
+      <video
+        className="mainVideo__vid"
+        controls
+        poster={props.video.image}
+        src={props.video.image}
+      ></video>
+    </div>
+  );
+};
 
 export default MainVideo;

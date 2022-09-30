@@ -2,9 +2,37 @@
 @use "../../styles/partials/variables" as *;
 
 .sideVideo {
+    display: flex;
+    justify-content: space-between;
+    margin: 1.6rem 0;
+
+    &__header {
+        padding-bottom: 1rem;
+    }
+
+    &__image-div {
+    }
 
     &__image {
-        width: 60px;
-        height: 60px;
+        width: 240px;
+        height: 150px;
+        border-radius: 8px;
+    }
+
+    &__content {
+        width: 60%;
+    }
+
+    &__title {
+        font-size: 3rem;
+        line-height: 3.8rem;
+        font-weight: 700;
+    }
+
+    &__channel {
+        font-size: 2.8rem;
+        line-height: 3.6rem;
+        font-weight: 500;
+        padding-top: 3.5rem;
     }
 }

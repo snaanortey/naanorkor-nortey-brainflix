@@ -1,3 +1,17 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 
+.commentBox {
+ padding: 0 2.4rem;
+}
+
+.comments-number {
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+    font-weight: 700;
+}
+
+.form__divider {
+    @include divider-lines;
+    margin-top: 1rem;
+}

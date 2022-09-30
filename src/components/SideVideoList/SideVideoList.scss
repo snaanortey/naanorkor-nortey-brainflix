@@ -1,2 +1,12 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
+
+.sideVideos {
+
+    padding: $mobile-padding;
+    
+    &__header {
+        color: silver;
+
+    }
+}

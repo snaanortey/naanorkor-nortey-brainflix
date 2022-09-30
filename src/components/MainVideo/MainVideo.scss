@@ -1,7 +1,11 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 
-.mainVideo__vid{
-    width: 60px;
-    height: 60px
+.mainVideo{
+
+    &__vid{
+    width: 100%;
+    height: 40rem;
+    object-fit: cover;
+    }
 }

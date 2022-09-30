@@ -7,6 +7,7 @@ const SideVideoList = (props) => {
 
     return (
       <div className="sideVideos">
+        <h2 className="sideVideos__header">NEXT VIDEOS</h2>
         <ul className="sideVideos__list">
           {filteredVideos.map((sideVideo) => (
             <SideVideo
