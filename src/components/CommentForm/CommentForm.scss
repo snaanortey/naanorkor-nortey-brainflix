@@ -96,10 +96,6 @@
             width: 20%;
         }
 
-        :hover {
-            background-color: $dark-blue-color;
-        }
-
         &-text {
             width: 90%;
         }
@@ -113,6 +109,11 @@
             }
         }
     }
+
+    &__button:hover {
+        background-color: $dark-blue-color;
+    }
+
     &__image-div {
         margin-top: 2.4rem;
 
