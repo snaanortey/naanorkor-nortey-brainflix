@@ -2,21 +2,20 @@
 @use "../../styles/partials/variables" as *;
 
 .sideVideos {
-
-    padding: $mobile-padding;
+    padding: 0 1.6rem;
 
     @include tablet {
         padding: $tablet-padding;
     }
-    
+    @include desktop {
+        padding: 0;
+    }
+
     &__header {
         color: silver;
-
-        @include tablet {
-            font-size: 1.4rem;
-    line-height: 2.2rem;
-            font-weight: 700;
-        }
+        font-size: 1.2rem;
+            line-height: 2rem;
+            font-weight: 800;
 
     }
 }

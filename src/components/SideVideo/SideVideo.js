@@ -1,5 +1,6 @@
 import "./SideVideo.scss"
 
+
 const SideVideo = (props) => {
  return (
    <div

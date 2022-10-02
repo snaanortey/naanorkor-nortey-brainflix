@@ -2,6 +2,7 @@ import avatar from "../../assets/Images/Mohan-muruge.jpg";
 import submitIcon from "../../assets/Icons/add_comment.svg"
 import "./CommentForm.scss"
 
+
 const CommentForm = () => {
 
     return (

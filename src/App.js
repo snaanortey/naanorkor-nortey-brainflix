@@ -23,11 +23,19 @@ const App = () => {
       <Header />
       <main>
         <MainVideo video={displayVideo} />
-        <MainVideoDetails video={displayVideo} />
-        <CommentBox comments={displayVideo.comments} />
-        <SideVideoList 
-        sideVideoClickHandler = {sideVideoClickHandler}
-        currentDisplayVideo={displayVideo.id} />
+        <div className="videos-container">
+          <div className="videos-container__one">
+            <MainVideoDetails video={displayVideo} />
+            <CommentBox comments={displayVideo.comments} />
+          </div>
+          <hr className="videos-container__divider" />
+          <div className="videos-container__two"> 
+          <SideVideoList
+            sideVideoClickHandler={sideVideoClickHandler}
+            currentDisplayVideo={displayVideo.id}
+          />
+          </div>
+        </div>
       </main>
     </>
   );

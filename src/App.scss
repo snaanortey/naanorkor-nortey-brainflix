@@ -1,2 +1,36 @@
 @use "./styles/partials/resets";
 @use "./styles/partials/typography";
+@use "./styles/partials/mixins" as *;
+@use "./styles/partials/variables" as *;
+
+.videos-container {
+    @include desktop {
+        width: 1020px;
+        margin: auto;
+        display: flex;
+    }
+
+    &__one {
+        @include desktop {
+        width: 70%;
+        padding: 2.4rem 0 6rem 0;
+        }
+    }
+
+    &__two {
+        @include desktop {
+        width: 30%;
+        padding: 2.4rem 0 6rem 2rem;
+        }
+    }
+
+    &__divider {
+
+        display: none;
+
+        @include desktop {
+            display: flex;
+        }
+
+    }
+}

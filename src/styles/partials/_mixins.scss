@@ -3,7 +3,7 @@
 // Button for mobile
 @mixin button-mobile {
     border-radius: 4px;
-    height: 8rem;
+    height: 3.5rem;
 }
 
 @mixin comment-button {
@@ -24,8 +24,8 @@
 }
 
 @mixin avatar {
-    width: 8rem;
-    height: 8rem;
+    width: 3.5rem;
+    height: 3.5rem;
     border-radius: 50%;
     object-fit: cover;
 }

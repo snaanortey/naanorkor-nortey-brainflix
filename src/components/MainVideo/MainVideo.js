@@ -3,6 +3,7 @@ import "./MainVideo.scss";
 const MainVideo = (props) => {
   return (
     <div className="mainVideo">
+      <div className="mainVideo__container"> 
       <video
         className="mainVideo__vid"
         controls
@@ -10,6 +11,7 @@ const MainVideo = (props) => {
         src={props.video.image}
         alt={props.video.channel} video
       ></video>
+      </div>
     </div>
   );
 };

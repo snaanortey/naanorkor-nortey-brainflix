@@ -1,6 +1,7 @@
 import "./MainVideoDetails.scss";
 import likeIcon from "../../assets/Icons/likes.svg";
 import viewIcon from "../../assets/Icons/views.svg";
+import {formatTimestamp} from "../../utils";
 
 const MainVideoDetails = (props) => {
  
@@ -12,7 +13,7 @@ const MainVideoDetails = (props) => {
         <div className="videoDetails__subtitles">
           <div className="videoDetails__subtitleone">
             <h2 className="videoDetails__channel">By {props.video.channel}</h2>
-            <p className="videoDetails__date">{props.video.timestamp}</p>
+            <p className="videoDetails__date">{formatTimestamp(props.video.timestamp)}</p>
           </div>
           <div className="videoDetails__subtitletwo">
             <div className="videoDetails__views">

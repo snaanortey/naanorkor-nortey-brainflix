@@ -2,28 +2,36 @@
 @use "../../styles/partials/variables" as *;
 
 .commentBox {
- padding: 0 2.4rem;
-
- @include tablet {
-padding: 1rem 3.6rem;
- } 
-}
-
-.comments-number {
-    font-size: 2.4rem;
-    line-height: 3.2rem;
-    font-weight: 700;
+    padding: 0 1.6rem 1.6rem 1.6rem;
 
     @include tablet {
-        font-size: 1.6rem;
-    line-height: 2.4rem;
-    font-weight: 800;
+        padding: 1rem 3.6rem;
+    }
+
+    @include desktop {
+        padding: 0;
     }
 }
 
+.comments-number {
+    font-size: 1.4rem;
+    line-height: 2rem;
+    font-weight: 700;
 
+    @include tablet {
+        font-weight: 800;
+    }
+
+    @include desktop {
+        padding-top: 4.5rem;
+    }
+}
 
 .form__divider {
     @include divider-lines;
     margin-top: 1rem;
+
+    @include desktop {
+        display: none;
+    }
 }

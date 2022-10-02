@@ -2,6 +2,7 @@ import "./SideVideoList.scss";
 import SideVideo from "../SideVideo/SideVideo";
 import sideVideoList from "../../assets/Data/videos.json";
 
+
 const SideVideoList = (props) => {
     const filteredVideos = sideVideoList.filter((sideVideo) => sideVideo.id !== props.currentDisplayVideo);
 
