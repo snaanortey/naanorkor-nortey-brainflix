@@ -13,7 +13,7 @@ const HomePage = () => {
   const { videoId = firstDisplayVideoId } = useParams();
 
   const showVideoDetails = () => {
-    console.log("effect called: fetching api data for video "+videoId);
+    console.log("effect called: fetching api data for video " + videoId);
     axios
       .get(`${APIBaseUrl}/videos/${videoId}`, {
         params: {
@@ -21,7 +21,6 @@ const HomePage = () => {
         },
       })
       .then((response) => {
-
         // Changes initial state of displayedvideo
         setDisplayedVideo(response.data);
       })
@@ -41,9 +40,16 @@ const HomePage = () => {
     <>
       <div>{console.log("Homepage Rendered")}</div>
       <MainVideo videos={displayedvideo} />
-      <MainVideoDetails videos={displayedvideo} />
-      <CommentBox comments={displayedvideo.comments} />
-      <SideVideo />
+      <div className="videos-container">
+        <div className="videos-container__one">
+          <MainVideoDetails videos={displayedvideo} />
+          <CommentBox comments={displayedvideo.comments} />
+        </div>
+        <hr className="videos-container__divider" />
+        <div className="videos-container__two">
+          <SideVideo />
+        </div>
+      </div>
     </>
   );
 };

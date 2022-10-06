@@ -1,5 +1,4 @@
 import {DateTime} from "luxon";
-import axios from "axios";
 
 export const formatTimestamp = (timestamp) => {
   const humanizedDate = DateTime.fromMillis(timestamp).toRelative();
