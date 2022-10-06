@@ -4,13 +4,13 @@ import MainVideoDetails from "../components/MainVideoDetails/MainVideoDetails";
 import SideVideo from "../components/SideVideo/SideVideo";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { APIBaseUrl, APIKey } from "../utils";
+import { APIBaseUrl, APIKey, firstDisplayVideoId } from "../utils";
 import { useParams } from "react-router-dom";
 
 const HomePage = () => {
   const [displayedvideo, setDisplayedVideo] = useState(null);
 
-  const { videoId = "84e96018-4022-434e-80bf-000ce4cd12b8" } = useParams();
+  const { videoId = firstDisplayVideoId } = useParams();
 
   const showVideoDetails = () => {
     console.log("effect called: fetching api data for video "+videoId);

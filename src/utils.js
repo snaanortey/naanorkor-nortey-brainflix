@@ -11,24 +11,5 @@ export const APIKey = "d0c50c53-8d5c-46b5-90ff-20eb4cd49a73";
 
 export const APIBaseUrl = "https://project-2-api.herokuapp.com";
 
-// Issues a get HTTP request with axios and returns a promise
-export const getVideos = () => {
-  const getVideosPromise = axios.get(`${APIBaseUrl}/videos`,
-  {
-    params: {
-      api_key: APIKey,
-    }
-  })
+export const firstDisplayVideoId = "84e96018-4022-434e-80bf-000ce4cd12b8";
 
-  return getVideosPromise;
-}
-
-// Issues a get HTTP request with axios using an id parameter, and returns a promise
-export const getVideosWithId = async (id) => {
-  const getVideosWithIdPromise = axios.get(`${APIBaseUrl}/videos/${id}`, {
-    params: {
-      api_key: APIKey,
-    }
-  })
-  return getVideosWithIdPromise;
-}
