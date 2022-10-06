@@ -7,9 +7,9 @@ const MainVideo = (props) => {
       <video
         className="mainVideo__vid"
         controls
-        poster={props.video.image}
-        src={props.video.image}
-        alt={props.video.channel} video
+        poster={props.videos.image}
+        src={props.videos.image}
+        alt={props.videos.channel} video
       ></video>
       </div>
     </div>

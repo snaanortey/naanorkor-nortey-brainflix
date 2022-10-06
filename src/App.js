@@ -1,42 +1,37 @@
 import CommentBox from "./components/CommentBox/CommentBox";
-import detailedVideos from "./assets/Data/video-details.json";
-import MainVideoDetails from "./components/MainVideoDetails/MainVideoDetails";
-import SideVideoList from "./components/SideVideoList/SideVideoList";
-import summarisedVideos from "./assets/Data/videos.json";
-import { useState } from "react";
-import MainVideo from "./components/MainVideo/MainVideo";
+import SideVideo from "./components/SideVideo/SideVideo";
+// import summarisedVideos from "./assets/Data/videos.json";
+import { useState, useEffect } from "react";
 import Header from "./components/Header/Header";
 import "./App.scss";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import UploadPage from "./pages/UploadPage";
+import axios from "axios";
+import {APIKey, APIBaseUrl } from "./utils";
+
 
 const App = () => {
-  const [displayVideo, setdisplayVideo] = useState(detailedVideos[0]);
-
-  const sideVideoClickHandler = (sideVideoId) => {
-    const newDisplayVideo = detailedVideos.find(
-      (sideVideo) => sideVideo.id === sideVideoId
-    );
-    setdisplayVideo(newDisplayVideo);
-  };
-
+ 
   return (
     <>
-      <Header />
-      <main>
-        <MainVideo video={displayVideo} />
-        <div className="videos-container">
-          <div className="videos-container__one">
-            <MainVideoDetails video={displayVideo} />
-            <CommentBox comments={displayVideo.comments} />
+      <BrowserRouter>
+        <Header />
+        <main>
+          <div className="videos-container">
+            <div className="videos-container__one"></div>
+            <hr className="videos-container__divider" />
+            <div className="videos-container__two">
+              <Routes>
+                <Route path="/" element={<HomePage />}></Route>
+
+                {/* videoId is equal to ${video.id} on line 32 in the SideVideo Component */}
+                <Route path="video/:videoId" element={<HomePage />}></Route>
+              </Routes>
+            </div>
           </div>
-          <hr className="videos-container__divider" />
-          <div className="videos-container__two"> 
-          <SideVideoList
-            sideVideoClickHandler={sideVideoClickHandler}
-            currentDisplayVideo={displayVideo.id}
-          />
-          </div>
-        </div>
-      </main>
+        </main>
+      </BrowserRouter>
     </>
   );
 };
