@@ -2,102 +2,106 @@
 @use "../../styles/partials/variables" as *;
 
 .sideVideo {
-    display: flex;
+  display: flex;
+  justify-content: flex-start;
+  margin: 1.6rem 0;
+  min-height: 7rem;
+  max-height: 8rem;
+  text-decoration: none;
+
+
+  @include tablet {
     justify-content: flex-start;
-    margin: 1.6rem 0;
-    min-height: 7rem;
-    max-height: 8rem;
+    width: 45%;
+    height: 8rem;
+  }
+
+  @include desktop {
+    min-height: 5.8rem;
+  max-height: 5.8rem;
+    width: 100%;
+    margin: 1.8rem 0;
+  }
+
+  &__image-div {
+    max-width: 16rem;
+    min-width: 13rem;
+    height: 7rem;
+    margin-right: 2rem;
+
+    @include desktop {
+      max-width: 13rem;
+      min-width: 11rem;
+      height: 5.8rem;
+    }
+  }
+
+  &__image {
+    border-radius: 4px;
+    max-width: 100%;
+    min-width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  &__content {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 65%;
+    color: $light-black-color;
+
+  }
+
+  &__title {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    font-weight: 800;
 
     @include tablet {
-        justify-content: flex-start;
-        width: 45%;
-        height: 8rem;
+      font-size: 1.6rem;
+      line-height: 2rem;
     }
 
     @include desktop {
-        height: 5rem;
-        width: 100%;
-        margin: 1.8rem 0;
+      font-size: 1.3rem;
+      line-height: 2rem;
+    }
+  }
+
+  &__channel {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    font-weight: 500;
+
+    @include tablet {
+      font-size: 1.6rem;
+      line-height: 2rem;
+      font-weight: 500;
     }
 
-    &__image-div {
-        max-width: 16rem;
-        min-width: 13rem;
-        height: 7rem;
-        margin-right: 2rem;
-
-        @include desktop {
-            max-width: 13rem;
-            min-width: 11rem;
-        }
+    @include desktop {
+      font-size: 1.2rem;
+      line-height: 2rem;
     }
-
-    &__image {
-        border-radius: 4px;
-        max-width: 100%;
-        min-width: 100%;
-        height: 100%;
-        object-fit: fill;
-    }
-
-    &__content {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 65%;
-    }
-
-    &__title {
-        font-size: 1.4rem;
-        line-height: 1.8rem;
-        font-weight: 800;
-
-        @include tablet {
-            font-size: 1.6rem;
-            line-height: 2rem;
-        }
-
-        @include desktop {
-            font-size: 1.3rem;
-            line-height: 2rem;
-        }
-    }
-
-    &__channel {
-        font-size: 1.4rem;
-        line-height: 1.8rem;
-        font-weight: 500;
-        
-
-        @include tablet {
-            font-size: 1.6rem;
-            line-height: 2rem;
-            font-weight: 500;
-            
-        }
-
-        @include desktop {
-            font-size: 1.2rem;
-            line-height: 2rem;
-        }
-    }
+  }
 }
 
 .sideVideos {
-    padding: 0 1.6rem;
+  padding: 0 1.6rem;
 
-    @include tablet {
-        padding: $tablet-padding;
-    }
-    @include desktop {
-        padding: 0;
-    }
+  @include tablet {
+    padding: $tablet-padding;
+  }
+  @include desktop {
+    padding: 0;
+  }
 
-    &__header {
-        color: silver;
-        font-size: 1.2rem;
-            line-height: 2rem;
-            font-weight: 800;
-
-    }
+  &__header {
+    color: silver;
+    font-size: 1.2rem;
+    line-height: 2rem;
+    font-weight: 800;
+  }
 }

@@ -1,8 +1,6 @@
 import "./Header.scss";
 import logo from "../../assets/Logo/BrainFlix-logo.svg";
-import searchLogo from "../../assets/Icons/search.svg";
 import profilePic from "../../assets/Images/Mohan-muruge.jpg";
-import uploadIcon from "../../assets/Icons/upload.svg";
 import { Link } from "react-router-dom";
 
 const Header = () => {

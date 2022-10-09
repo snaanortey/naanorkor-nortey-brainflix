@@ -1,6 +1,7 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 
+
 .header {
     &__container {
         display: flex;
@@ -55,10 +56,9 @@
         width: 96%;
         padding-left: 1rem;
         background-position: left;
-        background-position-x: 1rem;
-        border: 2px solid $divider-line-color;
-        background-color: $form-background-color;
+        background-position-x: 1rem;    
         background-size: 1.5rem;
+        @include search-button;
 
         @include tablet {
             background-size: 1.8rem;
@@ -90,21 +90,8 @@
     }
 
     &__upload-button {
-        background-image: url("../../assets/Icons/upload.svg");
-        background-repeat: no-repeat;
-        text-indent: 2rem;
-        background-color: $light-blue-color;
-        color: white;
-        width: 100%;
-        @include labels-button-mobile;
-        padding-left: 2.4rem;
-        background-size: 2rem;
-        background-position: left;
-        background-position-x: 1rem;
-        border: none;
-        font-size: 1.2rem;
-        line-height: 2.8rem;
-        font-weight: 600;
+       @include upload-button;
+       background-image: url("../../assets/Icons/upload.svg");
 
         @include tablet {
             width: 85%;
@@ -154,7 +141,7 @@
             color: $light-black-color;
             font-size: 1.2rem;
             line-height: 2.8rem;
-            font-weight: 600;
+            font-weight: 500;
 
             @include tablet {
                 position: absolute;

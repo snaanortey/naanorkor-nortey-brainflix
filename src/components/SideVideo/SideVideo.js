@@ -28,9 +28,9 @@ const SideVideo = () => {
     <div className="sideVideos">
       <h2 className="sideVideos__header">NEXT VIDEOS</h2>
       <ul className="sideVideos__list">
-        <div className="sideVideo">
+        <div className="sideVideos__container">
           {sideVideos.map((video) => (
-            <Link key={video.id} to={`/video/${video.id}`}>
+            <Link className="sideVideo" key={video.id} to={`/video/${video.id}`}>
               <div className="sideVideo__image-div">
                 <img
                   src={video.image}
