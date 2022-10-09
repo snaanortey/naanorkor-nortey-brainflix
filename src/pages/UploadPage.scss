@@ -145,6 +145,12 @@
     @include search-button;
     border-radius: 4px;
 
+
+    &:focus {
+      outline: 2px solid $light-blue-color;
+  }
+  
+
     &--title {
       height: 3.5rem;
       padding-left: 1rem;

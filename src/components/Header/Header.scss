@@ -60,6 +60,10 @@
         background-size: 1.5rem;
         @include search-button;
 
+        &:focus {
+            outline: 2px solid $light-blue-color;
+        }
+        
         @include tablet {
             background-size: 1.8rem;
             padding-top: 0;

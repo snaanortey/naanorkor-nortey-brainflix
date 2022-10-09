@@ -31,7 +31,7 @@ export default function UploadPage() {
               <img
                 className="uploadpage__image"
                 src={image}
-                alt //////////////////
+                alt="thumbnail image"
               />
             </div>
           </div>

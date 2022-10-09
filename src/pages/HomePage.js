@@ -13,7 +13,6 @@ const HomePage = () => {
   const { videoId = firstDisplayVideoId } = useParams();
 
   const showVideoDetails = () => {
-    console.log("effect called: fetching api data for video " + videoId);
     axios
       .get(`${APIBaseUrl}/videos/${videoId}`, {
         params: {

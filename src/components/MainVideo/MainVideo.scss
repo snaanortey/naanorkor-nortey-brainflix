@@ -2,14 +2,22 @@
 @use "../../styles/partials/variables" as *;
 
 .mainVideo {
+ height: 20rem;
+  
     @include tablet {
         background-color: black;
+        height: 35rem;
         
+    }
+
+    @include desktop {
+      height: 45rem;
     }
 
     &__vid {
         width: 100%;
-        object-fit: scale-down;
+        object-fit: fill;
+        height: 100%;
 
         @include tablet {
             padding: 0 3.6rem;
@@ -21,6 +29,8 @@
     }
 
     &__container {
+      height: 100%;
+
         @include desktop {
             margin: auto;
             max-width: 1020px;

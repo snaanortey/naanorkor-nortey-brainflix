@@ -2,7 +2,10 @@ import "./CommentItem.scss";
 import { formatTimestamp } from "../../utils";
 
 const CommentItem = (props) => {
-  // console.log("CommentItem", props);
+
+
+
+
   return (
     <div className="commentItem">
       <hr className="commentItem__divider" />
