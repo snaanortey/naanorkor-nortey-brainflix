@@ -10,7 +10,6 @@ const MainVideo = (props) => {
           poster={props.videos.image}
           src={props.videos.image}
           alt={props.videos.channel.toString()}
-          video
         ></video>
       </div>
     </div>

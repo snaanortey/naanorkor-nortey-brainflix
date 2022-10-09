@@ -30,12 +30,15 @@ const SideVideo = () => {
       <ul className="sideVideos__list">
         <div className="sideVideos__container">
           {sideVideos.map((video) => (
-            <Link className="sideVideo" key={video.id} to={`/video/${video.id}`}>
+            <Link
+              className="sideVideo"
+              key={video.id}
+              to={`/video/${video.id}`}
+            >
               <div className="sideVideo__image-div">
                 <img
                   src={video.image}
                   alt={video.channel}
-                  video
                   className="sideVideo__image"
                 />
               </div>

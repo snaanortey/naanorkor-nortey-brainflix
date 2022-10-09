@@ -9,7 +9,6 @@
   max-height: 8rem;
   text-decoration: none;
 
-
   @include tablet {
     justify-content: flex-start;
     width: 45%;
@@ -18,7 +17,7 @@
 
   @include desktop {
     min-height: 5.8rem;
-  max-height: 5.8rem;
+    max-height: 5.8rem;
     width: 100%;
     margin: 1.8rem 0;
   }
@@ -45,13 +44,11 @@
   }
 
   &__content {
-    
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 65%;
     color: $light-black-color;
-
   }
 
   &__title {
