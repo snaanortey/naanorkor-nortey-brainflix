@@ -1,19 +1,15 @@
 import "./SideVideo.scss";
 import axios from "axios";
-import { APIBaseUrl, APIKey } from "../../utils";
+import { APIBaseUrl } from "../../utils";
 import { useState, useEffect } from "react";
-import { NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const SideVideo = () => {
   const [sideVideos, setSideVideos] = useState(null);
 
   const getSideVideos = async () => {
-    const { data } = await axios.get(`${APIBaseUrl}/videos`, {
-      params: {
-        api_key: APIKey,
-      },
-    });
-
+    const { data } = await axios.get(`${APIBaseUrl}/videos`);
+  
     setSideVideos(data);
   };
 
@@ -30,7 +26,11 @@ const SideVideo = () => {
       <ul className="sideVideos__list">
         <div className="sideVideos__container">
           {sideVideos.map((video) => (
-            <Link className="sideVideo" key={video.id} to={`/video/${video.id}`}>
+            <Link
+              className="sideVideo"
+              key={video.id}
+              to={`/video/${video.id}`}
+            >
               <div className="sideVideo__image-div">
                 <img
                   src={video.image}

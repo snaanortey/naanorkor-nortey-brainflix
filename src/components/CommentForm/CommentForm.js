@@ -4,7 +4,7 @@ import "./CommentForm.scss";
 import { postComment, firstDisplayVideoId } from "../../utils";
 import { useParams } from "react-router-dom";
 
-const CommentForm = () => {
+const CommentForm = (props) => {
   // Grab the video id params value from react router
   // videoId is destructured from the params object, with a fall back to firstDisplayVideoId value
   // Fall back is needed when we are viewing the video page using the homepage route
@@ -22,22 +22,20 @@ const CommentForm = () => {
       return;
     }
 
-    //Create an object from the form input, using a hardcoded name and comment properties in post http server
+    //Create an object from the form input, comment properties in post http server
     const newComment = {
-      name: "Naa",
       comment: form.comment.value,
     };
 
-    const postPromise = postComment(videoId, newComment);
+    postComment(videoId, newComment);
 
-    //Post comment to http server using post http request
-    postPromise
-      .then((response) => {
-        console.log("comment posted", response);
-      })
-      .catch((err) => {
-        alert(err);
-      });
+    if (!postComment) {
+      <p>Loading...</p>;
+    }
+
+    // Sets state for re-rendering HomePage any time comment is submitted
+    // Passes as props to CommentBox then to HomePage
+    props.reloadParent(Math.random());
 
     // Reset form after submission
     form.reset();
