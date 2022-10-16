@@ -12,10 +12,10 @@ const HomePage = () => {
   const [displayedvideo, setDisplayedVideo] = useState(null);
 
   // Creates state for when new comment is submitted
-  const [newCommentUpdated, setNewCommentUpdated] = useState(false);
+  const [reloadMe, setReloadMe] = useState(false);
 
   const { videoId = firstDisplayVideoId } = useParams();
-  // what if this components is the one fttching the videos from the api
+  // what if this components is the one fetching the videos from the api
   // instead of you doing it in SideVideo component
 
   //that way you can get the 1st video id from the API data instead of hardcoding
@@ -35,7 +35,7 @@ const HomePage = () => {
   // Set subsequent display to be video for which
   useEffect(() => {
     showVideoDetails();
-  }, [videoId, newCommentUpdated]);
+  }, [videoId, reloadMe]);
 
   if (!displayedvideo) {
     return <main>Loading Video...</main>;
@@ -47,9 +47,9 @@ const HomePage = () => {
       <MainVideo videos={displayedvideo} />
       <div className="videos-container">
         <div className="videos-container__one">
-          <MainVideoDetails videos={displayedvideo} />
+          <MainVideoDetails videos={displayedvideo} reloadDisplayvideo={setReloadMe}/>
           <CommentBox
-            reloadComments={setNewCommentUpdated}
+            reloadComments={setReloadMe}
             comments={displayedvideo.comments}
           />
         </div>

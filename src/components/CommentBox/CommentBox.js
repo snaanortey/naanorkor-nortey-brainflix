@@ -1,7 +1,6 @@
 import CommentItem from "../CommentItem/CommentItem";
 import CommentForm from "../CommentForm/CommentForm";
 import "./CommentBox.scss";
-import { useState } from "react";
 import React from "react";
 
 const CommentBox = (props) => {
@@ -12,7 +11,7 @@ const CommentBox = (props) => {
       <CommentForm reloadParent={props.reloadComments} />
 
       {props.comments.map((comment) => (
-        <CommentItem key={comment.id} comment={comment} />
+        <CommentItem key={comment.id} comment={comment} reloadNonDeletedComments={props.reloadComments}/>
       ))}
 
       <hr className="form__divider" />

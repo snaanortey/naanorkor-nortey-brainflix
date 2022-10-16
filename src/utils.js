@@ -1,7 +1,6 @@
 import { DateTime } from "luxon";
 import axios from "axios";
 
-
 export const formatTimestamp = (timestamp) => {
   const humanizedDate = DateTime.fromMillis(timestamp).toRelative();
   return humanizedDate;
@@ -15,10 +14,7 @@ export const firstDisplayVideoId = "84e96018-4022-434e-80bf-000ce4cd12b8";
 export const postComment = (videoId, commentToPost) => {
   const postCommentPromise = axios.post(
     `${APIBaseUrl}/videos/${videoId}/comments`,
-    commentToPost,
-    
+    commentToPost
   );
   return postCommentPromise;
 };
-
-
