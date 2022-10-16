@@ -77,6 +77,10 @@
     justify-content: space-between;
     border-top: 1px solid rgb(228, 213, 213);
     margin-left: 7.5rem;
+
+    @include desktop {
+      margin-left: 5.5rem;
+    }
   }
 
   &__delete,
@@ -91,6 +95,14 @@
     margin-right: 0.5rem;
     height: 1.3rem;
     color: $divider-line-color;
+
+   
+  }
+
+  &__delete {
+ @include desktop {
+  margin-right: 3rem;
+ }
   }
 
   &__delete-text,
