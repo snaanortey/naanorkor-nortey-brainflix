@@ -9,7 +9,7 @@ const MainVideo = (props) => {
           controls
           poster={props.videos.image}
           src={props.videos.image}
-          alt={props.videos.channel.toString()}
+          alt={props.videos.channel}
         ></video>
       </div>
     </div>
