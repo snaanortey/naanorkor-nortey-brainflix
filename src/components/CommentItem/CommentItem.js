@@ -1,25 +1,25 @@
 import "./CommentItem.scss";
-import { formatTimestamp, APIBaseUrl, firstDisplayVideoId } from "../../utils";
+import { formatTimestamp, APIBaseUrl } from "../../utils";
 import deleteIcon from "../../assets/Icons/icon-delete.svg";
 import likeIcon from "../../assets/Icons/icon-like.svg";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
 const CommentItem = (props) => {
-  const { videoId = firstDisplayVideoId } = useParams();
+  const { videoId } = useParams();
 
-  const deleteHandler = (e) => {
+  const deleteHandler = async (e) => {
     // get the containg div that has the id
     const commentDiv = e.target.closest(".commentItem__delete");
 
     const commentId = commentDiv.dataset.id;
 
     // call the delete API to
-    axios
-      .delete(`${APIBaseUrl}/videos/${videoId}/comments/${commentId}`)
-      .then((response) => {
-        alert("Comment deleted");
-      });
+    await axios.delete(
+      `${APIBaseUrl}/videos/${props.videoId}/comments/${commentId}`
+    );
+
+    alert("Comment deleted");
 
     props.reloadNonDeletedComments(Math.random);
   };

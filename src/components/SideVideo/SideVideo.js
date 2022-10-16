@@ -1,31 +1,14 @@
-import "./SideVideo.scss";
-import axios from "axios";
-import { APIBaseUrl } from "../../utils";
-import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import "./SideVideo.scss";
 
-const SideVideo = () => {
-  const [sideVideos, setSideVideos] = useState(null);
-
-  const getSideVideos = async () => {
-    const { data } = await axios.get(`${APIBaseUrl}/videos`);
+const SideVideo = (props) => {
   
-    setSideVideos(data);
-  };
-
-  useEffect(() => {
-    getSideVideos();
-  }, []);
-
-  if (!sideVideos) {
-    return <main>Loading Videos...</main>;
-  }
   return (
     <div className="sideVideos">
       <h2 className="sideVideos__header">NEXT VIDEOS</h2>
       <ul className="sideVideos__list">
         <div className="sideVideos__container">
-          {sideVideos.map((video) => (
+          {props.videos.map((video) => (
             <Link
               className="sideVideo"
               key={video.id}

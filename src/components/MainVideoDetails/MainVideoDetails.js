@@ -1,26 +1,21 @@
 import "./MainVideoDetails.scss";
 import likeIcon from "../../assets/Icons/likes.svg";
 import viewIcon from "../../assets/Icons/views.svg";
-import {formatTimestamp, APIBaseUrl} from "../../utils";
+import { formatTimestamp, APIBaseUrl } from "../../utils";
 import axios from "axios";
 
-
 const MainVideoDetails = (props) => {
-
   const likeHandler = (e) => {
-
     const videoId = e.target.dataset.id;
 
     // call the put API to
-    axios
-      .put(`${APIBaseUrl}/videos/${videoId}/likes`)
-      .then((response) => {
-        alert("Thanks for liking this video");
-      });
+    axios.put(`${APIBaseUrl}/videos/${videoId}/likes`).then((response) => {
+      alert("Thanks for liking this video");
+    });
 
     props.reloadDisplayvideo(Math.random);
-  }
- 
+  };
+
   return (
     <div className="videoDetails">
       <h1 className="videoDetails__title">{props.videos.title}</h1>
@@ -29,7 +24,9 @@ const MainVideoDetails = (props) => {
         <div className="videoDetails__subtitles">
           <div className="videoDetails__subtitleone">
             <h2 className="videoDetails__channel">By {props.videos.channel}</h2>
-            <p className="videoDetails__date">{formatTimestamp(props.videos.timestamp)}</p>
+            <p className="videoDetails__date">
+              {formatTimestamp(props.videos.timestamp)}
+            </p>
           </div>
           <div className="videoDetails__subtitletwo">
             <div className="videoDetails__views">
@@ -41,7 +38,8 @@ const MainVideoDetails = (props) => {
               <p className="videoDetails__view-number">{props.videos.views}</p>
             </div>
             <div className="videoDetails__likes">
-              <img onClick={likeHandler}
+              <img
+                onClick={likeHandler}
                 src={likeIcon}
                 alt="like icon"
                 className="videoDetails__likeIcon"

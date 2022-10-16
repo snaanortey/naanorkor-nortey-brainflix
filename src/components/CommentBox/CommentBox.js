@@ -8,10 +8,18 @@ const CommentBox = (props) => {
     <div className="commentBox">
       <p className="comments-number">{props.comments.length} Comments</p>
 
-      <CommentForm reloadParent={props.reloadComments} />
+      <CommentForm
+        reloadParent={props.reloadComments}
+        videoId={props.videoId}
+      />
 
       {props.comments.map((comment) => (
-        <CommentItem key={comment.id} comment={comment} reloadNonDeletedComments={props.reloadComments}/>
+        <CommentItem
+          key={comment.id}
+          comment={comment}
+          reloadNonDeletedComments={props.reloadComments}
+          videoId={props.videoId}
+        />
       ))}
 
       <hr className="form__divider" />

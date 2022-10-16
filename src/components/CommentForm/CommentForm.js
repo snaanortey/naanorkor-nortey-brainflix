@@ -1,14 +1,13 @@
 import avatar from "../../assets/Images/Mohan-muruge.jpg";
 import submitIcon from "../../assets/Icons/add_comment.svg";
 import "./CommentForm.scss";
-import { postComment, firstDisplayVideoId } from "../../utils";
+import { postComment } from "../../utils";
 import { useParams } from "react-router-dom";
 
 const CommentForm = (props) => {
   // Grab the video id params value from react router
   // videoId is destructured from the params object, with a fall back to firstDisplayVideoId value
   // Fall back is needed when we are viewing the video page using the homepage route
-  const { videoId = firstDisplayVideoId } = useParams();
 
   const handleCommentFormSubmit = (event) => {
     //Prevents form from reloading after submission by user
@@ -27,7 +26,7 @@ const CommentForm = (props) => {
       comment: form.comment.value,
     };
 
-    postComment(videoId, newComment);
+    postComment(props.videoId, newComment);
 
     if (!postComment) {
       <p>Loading...</p>;
