@@ -8,10 +8,6 @@ import HomePage from "../HomePage/HomePage";
 export default function UploadPage() {
   let Navigate = useNavigate();
 
-  const handleNavigation = () => {
-    Navigate("/");
-  };
-
   const handleFormSubmit = (event) => {
     event.preventDefault();
 
@@ -20,7 +16,7 @@ export default function UploadPage() {
     const newVideo = {
       title: form.videoTitle.value,
       channel: form.videoDescription.value,
-      image: "http://localhost:5050/image/0",
+      image: "",
       description:
         "Traveling by train can be convenient, enjoyable and economical. You can minimize your risk of injury, illness, and theft by taking a few simple precautions. Before you travel, you should pack only the necessities. This will make your luggage easy to carry and store during your travels. You should always assume that the tap water on the train is not potable. Whenever it is possible, stock up on bottles of water to reduce the risk of dehydration. Remember, never accept food or drinks from strangers!",
       views: "3,092,284",
@@ -48,33 +44,19 @@ export default function UploadPage() {
       ],
     };
 
-    console.log(form.videoTitle.value);
-
-    const addNewVideo = () => {
-      axios
-        .post("http://localhost:5050/videos", newVideo)
-        .then((response) => {
-          console.log(newVideo);
-
-          // Reload new video array to include new video added in form
-          axios.get("http://localhost:5050/videos");
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    };
-
-    addNewVideo();
-
-    if (!addNewVideo) {
-      return <main>New Video Upload loading...</main>;
-    }
+    axios
+      .post("http://localhost:5050/videos", newVideo)
+      .then((response) => {})
+      .catch((err) => {
+        console.log(err);
+      });
 
     form.reset();
 
     alert("Thanks for uploading your video 😃");
 
-    handleNavigation();
+    // Navigate to homePage
+    Navigate("/");
   };
 
   return (

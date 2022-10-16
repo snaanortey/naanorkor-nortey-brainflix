@@ -26,8 +26,6 @@ const HomePage = () => {
 
       const tempVideoId = videoId ? videoId : allVideos[0].id;
 
-      console.log(currentVideoId);
-
       const currentVideo = allVideos.find((video) => video.id === tempVideoId);
 
       // Filter out the video that is in display
@@ -58,7 +56,6 @@ const HomePage = () => {
 
   return (
     <>
-      <div>{console.log("Homepage Rendered")}</div>
       <MainVideo videos={displayedvideo} />
       <div className="videos-container">
         <div className="videos-container__one">

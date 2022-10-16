@@ -11,7 +11,7 @@ const MainVideoDetails = (props) => {
     // call the put API to
     axios.put(`${APIBaseUrl}/videos/${videoId}/likes`).then((response) => {
       alert("Thanks for liking this video");
-    });
+    }).catch((err)=>{console.log(err)});
 
     props.reloadDisplayvideo(Math.random);
   };

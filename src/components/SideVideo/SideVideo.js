@@ -18,7 +18,6 @@ const SideVideo = (props) => {
                 <img
                   src={video.image}
                   alt={video.channel}
-                  video
                   className="sideVideo__image"
                 />
               </div>
